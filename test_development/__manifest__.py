@@ -12,8 +12,7 @@ Development for testing
     'depends': ['base', 'sale_management'],
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/updated_sale_order_view.xml'
     ],
 }
 
