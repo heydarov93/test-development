@@ -6,7 +6,9 @@
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
 
-            <field name="payment_term_id" invisible="1" />
+            <field name="payment_term_id" position="after" >
+                <field name="write_date" />
+            </field>
         </field>
     </record>
 </odoo>
