@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Development for testing",
-    'summary': "Development for testing",
+    'name': "Perfume Shop Inventory",
+    'summary': "A comprehensive inventory management system for a perfume wholesale/retail shop selling oil-based perfumes measured in grams/liters.",
     'description': """
 Development for testing
     """,
@@ -9,11 +9,12 @@ Development for testing
     'website': "https://www.erpgo.az",
     'category': 'Uncategorized',
     'version': '18.0',
-    'depends': ['base', 'sale_management'],
+    'depends': ['base', 'sale'],
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
     ],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
 }
 
