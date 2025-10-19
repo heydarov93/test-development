@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <template id="sale_order_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="sale">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <t t-set="a" t-value="1234567890" />
+                        <t t-set="b">
+                            yashar
+                        </t>
+                        <h1 t-esc="a" />
+                        <h1 t-esc="b" />
+                        <h1 t-esc="sale.company_id.name" />
+                        <h2 t-esc="sale.activity_state" />
+                        <h3 t-esc="sale.activity_summary" />
+                        <h4 t-if="sale.partner_invoice_id.name == 'Mitchell Admin'">
+                            Mitchell
+                        </h4>
+                        <h4 t-elif="sale.partner_invoice_id.name == 'Lumber Inc'">
+                            Lumber
+                        </h4>
+                        <h4 t-else="">
+                            <span t-out="sale.partner_invoice_id.name" />
+                        </h4>
+                        
+                        <h6 t-esc="sale.name" />
+                        <strong t-esc="sale.partner_shipping_id.name" />
+                        <i t-attf-class="fa {{sale.activity_type_icon}}" />
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <record id="sale_order_template_record" model="ir.actions.report">
+        <field name="name">Sale order pdf</field>    
+        <field name="model">sale.order</field>    
+        <field name="report_type">qweb-pdf</field>    
+        <field name="report_name">qweb_test.sale_order_template</field>    
+       <field name="report_file">qweb_test.sale_order_template</field>
+        <field name="binding_model_id" ref="sale.model_sale_order" />
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
