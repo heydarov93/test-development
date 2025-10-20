@@ -3,53 +3,95 @@
     <template id="sale_order_template">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="sale">
-                <t t-call="web.external_layout">
-                    <div class="page">
-                        <!-- <t t-set="a" t-value="1234567890" />
-                        <t t-set="b">
-                            yashar
-                        </t>
-                        <h1 t-esc="a" />
-                        <h1 t-esc="b" />
-                        <h1 t-esc="sale.order_line" />
-                        <h1 t-out="sale.order_line" />
-                        <h1 t-field="sale.order_line" />
-                        <h1 t-field="Salam necesen" />
-                        <h2 t-esc="sale.activity_state" />
-                        <h3 t-esc="sale.activity_summary" />
-                        <h4 t-if="sale.partner_invoice_id.name == 'Mitchell Admin'">
-                            Mitchell
-                        </h4>
-                        <h4 t-elif="sale.partner_invoice_id.name == 'Lumber Inc'">
-                            Lumber
-                        </h4>
-                        <h4 t-else="">
-                            <span t-out="sale.partner_invoice_id.name" />
-                        </h4>
-                        
-                        <h6 t-esc="sale.name" />
-                        <strong t-esc="sale.partner_shipping_id.name" />
-                        <i t-attf-class="fa {{sale.activity_type_icon}}" /> -->
-
-                        <t t-foreach="sale.order_line" t-as="value">
-                            <p t-out="value.name"/>
-                        </t>
-
-                        <t t-foreach="['alma', 'armud', 'heyva', 'nar', 'banan']" t-as="value">
-                            <h4 t-out="str(value_index) + ' - ' + value + ' has length ' + str(len(value))"/>
-                            <p t-if="value_first" t-out="'This is FIRST element'" />
-                            <p t-if="value_last" t-out="'This is LAST element'" />
-                            <p t-out="value_parity"/>
-                            <p>Is even: <span t-out="value_even"/></p>
-                            <p>Is odd: <span t-out="value_odd"/></p>
-                        </t>
-                    </div>
-                </t>
+                <t t-call="qweb_test.sub_sale_order_template" />
             </t>
         </t>
     </template>
 
+    <template id="sub_sale_order_template">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <!-- setting attributes -->
+                <t t-set="myLink" t-value="'https://www.google'" />
+                <a t-att="{'style': 'background-color: cyan; color: white', 'target': '_blank'}" t-attf-href="{{myLink}}.az">Go to Google</a>
 
+                <i t-attf-class="fa #{sale.activity_type_icon if sale.activity_type_icon == 'fa-checked' else 'fa-home'}"></i>
+                <!-- END setting attributes -->
+
+                <div>
+                 <!-- <t t-set="a" t-value="1234567890" />
+                <t t-set="b" t-value="'Yashar'" />
+                 <h1 t-esc="a" />
+                <h1 t-esc="b" />
+               <h1 t-esc="sale.order_line" />
+                <h1 t-out="sale.order_line" />
+                <h1 t-field="sale.order_line" />
+                <h2 t-esc="sale.activity_state" />
+                <h3 t-esc="sale.activity_summary" />
+                <h4 t-if="sale.partner_invoice_id.name == 'Mitchell Admin'">
+                    Mitchell
+                </h4>
+                <h4 t-elif="sale.partner_invoice_id.name == 'Lumber Inc'">
+                    Lumber
+                </h4>
+                <h4 t-else="">
+                    <span t-out="sale.partner_invoice_id.name" />
+                </h4>
+                
+                <h6 t-esc="sale.name" />
+                <strong t-esc="sale.partner_shipping_id.name" />
+                <i t-attf-class="fa {{sale.activity_type_icon}}" /> 
+
+                 <t t-foreach="sale.order_line" t-as="value">
+                    <p t-out="value.name"/>
+                </t>
+
+                <t t-foreach="['alma', 'armud', 'heyva', 'nar', 'banan']" t-as="value">
+                    <h4 t-out="str(value_index) + ' - ' + value + ' has length ' + str(len(value))"/>
+                    <p t-if="value_first" t-out="'This is FIRST element'" />
+                    <p t-if="value_last" t-out="'This is LAST element'" />
+                    <p t-out="value_parity"/>
+                    <p>Is even: <span t-out="value_even"/></p>
+                    <p>Is odd: <span t-out="value_odd"/></p>
+                </t> -->
+                </div>
+                <h1>Template 1</h1>
+                <t t-call="qweb_test.sub_template_2"/>
+                <t t-call="qweb_test.sub_template_3"/>
+                <t t-call="qweb_test.sub_template_4"/>
+                <t t-call="qweb_test.sub_template_5"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="sub_template_2">
+        <h1>Template 2</h1>
+    </template>
+    <template id="sub_template_3">
+        <h1>Template 3</h1>
+    </template>
+    <template id="sub_template_4">
+        <h1>Template 4</h1>
+    </template>
+    <template id="sub_template_5">
+        <h1>Template 5</h1>
+    </template>
+
+    <record id="sale_order_custom_paperformat" model="report.paperformat">
+        <field name="name">Sale Order Custom Paper Format</field>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="page_height">300</field>
+        <field name="page_width">0</field>
+        <field name="margin_top">5</field>
+        <field name="margin_bottom">5</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_spacing">35</field>
+        <field name="disable_shrinking"></field>
+        <field name="dpi">90</field>
+    </record>
+    
     <record id="sale_order_template_record" model="ir.actions.report">
         <field name="name">Sale order pdf</field>    
         <field name="model">sale.order</field>    
@@ -58,5 +100,6 @@
        <field name="report_file">qweb_test.sale_order_template</field>
         <field name="binding_model_id" ref="sale.model_sale_order" />
         <field name="binding_type">report</field>
+    <field name="paperformat_id" ref="qweb_test.sale_order_custom_paperformat" />
     </record>
 </odoo>
