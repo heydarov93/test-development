@@ -5,13 +5,16 @@
             <t t-foreach="docs" t-as="sale">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <t t-set="a" t-value="1234567890" />
+                        <!-- <t t-set="a" t-value="1234567890" />
                         <t t-set="b">
                             yashar
                         </t>
                         <h1 t-esc="a" />
                         <h1 t-esc="b" />
-                        <h1 t-esc="sale.company_id.name" />
+                        <h1 t-esc="sale.order_line" />
+                        <h1 t-out="sale.order_line" />
+                        <h1 t-field="sale.order_line" />
+                        <h1 t-field="Salam necesen" />
                         <h2 t-esc="sale.activity_state" />
                         <h3 t-esc="sale.activity_summary" />
                         <h4 t-if="sale.partner_invoice_id.name == 'Mitchell Admin'">
@@ -26,7 +29,20 @@
                         
                         <h6 t-esc="sale.name" />
                         <strong t-esc="sale.partner_shipping_id.name" />
-                        <i t-attf-class="fa {{sale.activity_type_icon}}" />
+                        <i t-attf-class="fa {{sale.activity_type_icon}}" /> -->
+
+                        <t t-foreach="sale.order_line" t-as="value">
+                            <p t-out="value.name"/>
+                        </t>
+
+                        <t t-foreach="['alma', 'armud', 'heyva', 'nar', 'banan']" t-as="value">
+                            <h4 t-out="str(value_index) + ' - ' + value + ' has length ' + str(len(value))"/>
+                            <p t-if="value_first" t-out="'This is FIRST element'" />
+                            <p t-if="value_last" t-out="'This is LAST element'" />
+                            <p t-out="value_parity"/>
+                            <p>Is even: <span t-out="value_even"/></p>
+                            <p>Is odd: <span t-out="value_odd"/></p>
+                        </t>
                     </div>
                 </t>
             </t>
