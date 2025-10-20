@@ -25,5 +25,6 @@ qweb test
         # 'security/ir.model.access.csv',
         'views/sale_order_report.xml'
     ],
+    'license': 'LGPL-3'
 }
 
