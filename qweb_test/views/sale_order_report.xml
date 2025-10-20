@@ -81,14 +81,13 @@
         <field name="name">Sale Order Custom Paper Format</field>
         <field name="format">A4</field>
         <field name="orientation">Landscape</field>
-        <field name="page_height">300</field>
+        <field name="page_height">0</field>
         <field name="page_width">0</field>
         <field name="margin_top">5</field>
         <field name="margin_bottom">5</field>
         <field name="margin_left">5</field>
         <field name="margin_right">5</field>
         <field name="header_spacing">35</field>
-        <field name="disable_shrinking"></field>
         <field name="dpi">90</field>
     </record>
     
