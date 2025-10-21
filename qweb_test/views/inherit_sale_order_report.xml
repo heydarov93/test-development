@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template inherit_id="sub_sale_order_template" id="sub_sale_order_template_extend">
+    <!-- <template inherit_id="sub_sale_order_template" id="sub_sale_order_template_extend">
         <xpath expr="//div[hasclass('page')]" position="replace">
             <div class="page">
                 <h1>I am extending my existing template</h1>
             </div>
         </xpath>
-    </template>
+    </template> -->
 </odoo>

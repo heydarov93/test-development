@@ -77,7 +77,7 @@
         <h1>Template 5</h1>
     </template>
 
-    <record id="sale_order_custom_paperformat" model="report.paperformat">
+    <!-- <record id="sale_order_custom_paperformat" model="report.paperformat">
         <field name="name">Sale Order Custom Paper Format</field>
         <field name="format">A4</field>
         <field name="orientation">Landscape</field>
@@ -89,7 +89,7 @@
         <field name="margin_right">5</field>
         <field name="header_spacing">35</field>
         <field name="dpi">90</field>
-    </record>
+    </record> -->
     
     <record id="sale_order_template_record" model="ir.actions.report">
         <field name="name">Sale order pdf</field>    
