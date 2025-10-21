@@ -96,9 +96,9 @@
         <field name="model">sale.order</field>    
         <field name="report_type">qweb-pdf</field>    
         <field name="report_name">qweb_test.sale_order_template</field>    
-       <field name="report_file">qweb_test.sale_order_template</field>
+        <field name="report_file">qweb_test.sale_order_template</field>
         <field name="binding_model_id" ref="sale.model_sale_order" />
         <field name="binding_type">report</field>
-    <field name="paperformat_id" ref="qweb_test.sale_order_custom_paperformat" />
+    <!-- <field name="paperformat_id" ref="qweb_test.sale_order_custom_paperformat" /> -->
     </record>
 </odoo>
