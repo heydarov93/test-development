@@ -24,7 +24,8 @@ qweb test
     'data': [
         # 'security/ir.model.access.csv',
         'views/sale_order_report.xml',
-        'views/inherit_sale_order_report.xml'
+        'views/inherit_sale_order_report.xml',
+        'views/new_custom_report.xml'
     ],
     'license': 'LGPL-3'
 }

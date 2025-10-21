@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="income_statements_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="sale">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <h1>Income Statements</h1>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="income_statements_record" model="ir.actions.report">
+        <field name="name">Income Statements</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">qweb_test.income_statements_template</field>
+        <field name="binding_model_id" ref="sale.model_sale_order" />
+        <field name="binding_type">report</field>
+        <!-- <field name="print_report_name">
+            Income Statements <t t-out="date().now()" />
+        </field> -->
+    </record>
+</odoo>
