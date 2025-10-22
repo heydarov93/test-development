@@ -5,7 +5,60 @@
             <t t-foreach="docs" t-as="sale">
                 <t t-call="web.basic_layout">
                     <div class="page">
-                        <h1>Income Statements</h1>
+                        <div class="">
+                            <h1>Income Statements</h1>
+
+                            <div>
+                                <h4>Main Sources of Revenue</h4>
+                                <div>
+                                    <div>
+                                        <strong>$200,000</strong>
+                                        <span>New Partnerships</span>
+                                    </div>
+                                    <div>
+                                        <strong>$750,000</strong>
+                                        <span>New Clients</span>
+                                    </div>
+                                    <div>
+                                        <strong>$400,000</strong>
+                                        <span>Recurring revenue from web apps</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4>Company Expenses</h4>
+                                <div>
+                                    <div>
+                                        <span>Operations</span>
+                                        <span></span>
+                                    </div>
+                                    <div>
+                                        <span>New Equipment</span>
+                                        <span></span>
+                                    </div>
+                                    <div>
+                                        <span>Licenses</span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span>
+                                    <strong>Operations</strong>
+                                    <span>$150,000</span>
+                                </span>
+                                <span>
+                                    <strong>Operations</strong>
+                                    <span>$150,000</span>
+                                </span>
+                                <span>
+                                    <strong>Operations</strong>
+                                    <span>$150,000</span>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </t>
             </t>
@@ -19,8 +72,5 @@
         <field name="report_name">qweb_test.income_statements_template</field>
         <field name="binding_model_id" ref="sale.model_sale_order" />
         <field name="binding_type">report</field>
-        <!-- <field name="print_report_name">
-            Income Statements <t t-out="date().now()" />
-        </field> -->
     </record>
 </odoo>
