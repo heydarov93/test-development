@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="income_statements_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="sale">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <div class="">
+                            <h1>Income Statements</h1>
+
+                            <div>
+                                <h4>Main Sources of Revenue</h4>
+                                <div>
+                                    <div>
+                                        <strong>$200,000</strong>
+                                        <span>New Partnerships</span>
+                                    </div>
+                                    <div>
+                                        <strong>$750,000</strong>
+                                        <span>New Clients</span>
+                                    </div>
+                                    <div>
+                                        <strong>$400,000</strong>
+                                        <span>Recurring revenue from web apps</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4>Company Expenses</h4>
+                                <div>
+                                    <div>
+                                        <span>Operations</span>
+                                        <span></span>
+                                    </div>
+                                    <div>
+                                        <span>New Equipment</span>
+                                        <span></span>
+                                    </div>
+                                    <div>
+                                        <span>Licenses</span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span>
+                                    <strong>Operations</strong>
+                                    <span>$150,000</span>
+                                </span>
+                                <span>
+                                    <strong>Operations</strong>
+                                    <span>$150,000</span>
+                                </span>
+                                <span>
+                                    <strong>Operations</strong>
+                                    <span>$150,000</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="income_statements_record" model="ir.actions.report">
+        <field name="name">Income Statements</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">qweb_test.income_statements_template</field>
+        <field name="binding_model_id" ref="sale.model_sale_order" />
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

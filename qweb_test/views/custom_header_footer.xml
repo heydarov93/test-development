@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="custom_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <div class="page">
+            <div class="header">
+            <!-- <div>
+                <i t-attf-class="fa {{company.activity_type_icon}}"></i>
+            </div> -->
+            <img t-if="company.logo" 
+     t-att-src="image_data_uri(company.logo)" 
+     alt="Company Logo" 
+     style="max-height: 50px;"/>
+        </div>
+        <div class="o_report_layout_standard">
+            <t t-out="0" />
+        </div>
+        <div class="footer">
+            <div>
+                <h1>Footer</h1>
+            </div>
+            <div class="row text-center">
+                <span class="page" />/<span class="topage"/>
+            </div>
+            <p t-out="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y %H:%M')" />
+        </div>
+        </div>
+    </template>
+
+    
+    <template id="custom_header_footer_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="qweb_test.custom_layout">
+                    <h1>Custom header and footer</h1>
+                    
+                <t t-foreach="range(0, 1000)" t-as="a">
+                    <div t-out="a" />
+                </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+     
+
+    <record id="custom_header_footer_record" model="ir.actions.report">
+        <field name="name">Custom Header Footer</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">qweb_test.custom_header_footer_template</field>
+        <field name="report_file">qweb_test.custom_header_footer_template</field>
+        <field name="print_report_name">'Header &amp; Footer'</field>
+        <field name="binding_model_id" ref="sale.model_sale_order" />
+        <field name="binding_type">report</field>
+    </record>
+
+    
+    <record id="sale_order_header_extend" model="ir.ui.view">
+        <field name="name">sale.order.header.extend</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@id='create_invoice']" position="after">
+                <button name="print_custom_report" type="object" class="btn-primary" string="Print Custom Report" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

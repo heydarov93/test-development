@@ -14,5 +14,6 @@ Development for testing
         # 'security/ir.model.access.csv',
         'views/updated_sale_order_view.xml'
     ],
+    'license': 'LGPL-3'
 }
 
