@@ -6,8 +6,21 @@
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
             <xpath expr="//group/field[@name='payment_term_id']" position="after">
-                
-                <field name="name" readonly="1" widget="email" />
+                <group class="w-100">
+                    <field class="w-100" name="custom_report" readonly="0" options="{'sandboxedPreview':show_preview}" />
+                   
+                    <button
+                        id="togglePreview"
+                        name="toggle_preview"
+                        type="object"
+                        class="btn-secondary"
+                        string="Show html preview" />
+                    <button
+                        name="print_custom_report"
+                        type="object"
+                        class="btn-primary"
+                        string="Print Custom Report" />
+                </group>
             </xpath>
         </field>
     </record>

@@ -45,11 +45,7 @@
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
                 <t t-call="qweb_test.custom_layout">
-                    <h1 t-field="doc.company_name" />
-                    
-                <t t-foreach="range(0, 1000)" t-as="a">
-                    <div t-out="a" />
-                </t>
+                    <h1 t-out="doc.custom_report" />
                 </t>
             </t>
         </t>
@@ -69,14 +65,14 @@
     </record>
 
     
-    <record id="sale_order_header_extend" model="ir.ui.view">
+    <!-- <record id="sale_order_header_extend" model="ir.ui.view">
         <field name="name">sale.order.header.extend</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
             <xpath expr="//header/button[@id='create_invoice']" position="after">
-                <button name="print_custom_report" type="object" class="btn-primary" string="Print Custom Report" />
+                <button name="print_custom_report" type="object" class="btn-primary" string="Print Custom Report" invisible="1" />
             </xpath>
         </field>
-    </record>
+    </record> -->
 </odoo>
