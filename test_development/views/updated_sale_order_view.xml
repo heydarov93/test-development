@@ -7,7 +7,8 @@
         <field name="arch" type="xml">
             <xpath expr="//group/field[@name='payment_term_id']" position="after">
                 <group class="w-100">
-                    <field class="w-100" name="custom_report" readonly="0" options="{'sandboxedPreview':show_preview}" />
+                    <field class="w-100" name="custom_report" readonly="0" options="{'sandboxedPreview':true}" invisible="show_preview" /> />
+                    <field class="w-100" name="custom_report" readonly="0" options="{'sandboxedPreview':false}" invisible="not show_preview"/> />
                    
                     <button
                         id="togglePreview"
@@ -20,6 +21,9 @@
                         type="object"
                         class="btn-primary"
                         string="Print Custom Report" />
+
+                    <field name="gender" />
+                    <field name="advanced_gender" placeholder="Select one of the genders" />
                 </group>
             </xpath>
         </field>
