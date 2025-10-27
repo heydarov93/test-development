@@ -8,7 +8,7 @@ class SaleOrder(models.Model):
     custom_report = fields.Html("Create Custom Report");
     show_preview = fields.Boolean("Show Preview", default=False)
     gender = fields.Selection([('male', 'Kişibala'),('female', 'Xanım')], default="male")
-    advanced_gender = fields.Selection("_get_advanced_genders", required=True)
+    advanced_gender = fields.Selection("_get_advanced_genders")
 
     def print_custom_report(self):
         return self.env.ref("qweb_test.custom_header_footer_record").report_action(self)
