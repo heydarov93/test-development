@@ -6,9 +6,10 @@ class SaleOrder(models.Model):
 
     company_name = fields.Char("My Company Name", default="ERPGO az");
     custom_report = fields.Html("Create Custom Report");
-    show_preview = fields.Boolean("Show Preview", default=False)
+    show_preview = fields.Boolean("Show Preview", default=True)
     gender = fields.Selection([('male', 'Kişibala'),('female', 'Xanım')], default="male")
     advanced_gender = fields.Selection("_get_advanced_genders")
+    mushteriler = fields.Many2one("mushteriler")
 
     def print_custom_report(self):
         return self.env.ref("qweb_test.custom_header_footer_record").report_action(self)
@@ -18,3 +19,8 @@ class SaleOrder(models.Model):
 
     def _get_advanced_genders(self):
         return [('a', 'A'),('b', 'B'), ('c', 'C')];
+
+
+class Mushteriler(models.Model):
+    _name = 'mushteriler'
+    name = fields.Char()
