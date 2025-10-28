@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <!-- ========== ACTIONS ========== -->
+        
+        <!-- Action for Perfume Brands -->
+        <record id="action_perfume_brand" model="ir.actions.act_window">
+            <field name="name">Perfume Brands</field>
+            <field name="res_model">perfume.brand</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first perfume brand
+                </p>
+            </field>
+        </record>
+        
+        <!-- Action for Perfume Products -->
+        <record id="action_perfume_product" model="ir.actions.act_window">
+            <field name="name">Perfume Products</field>
+            <field name="res_model">perfume.product</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first perfume product
+                </p>
+            </field>
+        </record>
+        
+        <!-- Action for Perfumers -->
+        <record id="action_perfumer" model="ir.actions.act_window">
+            <field name="name">Perfumers</field>
+            <field name="res_model">perfume.perfumer</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first perfumer
+                </p>
+            </field>
+        </record>
+        
+        <!-- Action for Accords -->
+        <record id="action_accords" model="ir.actions.act_window">
+            <field name="name">Accords</field>
+            <field name="res_model">perfume.accords</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first accord
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

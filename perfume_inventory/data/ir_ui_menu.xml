@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <!-- Root Menu (Home Screen Icon) -->
+        <menuitem 
+            id="menu_perfume_inventory_root"
+            name="Perfume Inventory"
+            sequence="10"
+            web_icon="perfume_inventory,static/description/icon.png"/>
+
+        <!-- ========== SUBMENUS ========== -->
+        
+        <!-- Products Menu Group -->
+        <menuitem 
+            id="menu_perfume_products_section"
+            name="Products"
+            parent="menu_perfume_inventory_root"
+            sequence="10"/>
+        
+        <menuitem 
+            id="menu_perfume_products"
+            name="Perfumes"
+            parent="menu_perfume_products_section"
+            action="action_perfume_product"
+            sequence="10"/>
+        
+        <menuitem 
+            id="menu_perfume_brands"
+            name="Brands"
+            parent="menu_perfume_products_section"
+            action="action_perfume_brand"
+            sequence="20"/>
+        
+        <!-- Configuration Menu Group -->
+        <menuitem 
+            id="menu_perfume_config_section"
+            name="Configuration"
+            parent="menu_perfume_inventory_root"
+            sequence="100"/>
+        
+        <menuitem 
+            id="menu_perfumers"
+            name="Perfumers"
+            parent="menu_perfume_config_section"
+            action="action_perfumer"
+            sequence="10"/>
+        
+        <menuitem 
+            id="menu_accords"
+            name="Accords"
+            parent="menu_perfume_config_section"
+            action="action_accords"
+            sequence="20"/>
+    </data>
+</odoo>
