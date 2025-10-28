@@ -22,7 +22,7 @@ qweb test
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/sale_order_report.xml',
         'views/custom_header_footer.xml',
         'views/new_custom_report.xml'
