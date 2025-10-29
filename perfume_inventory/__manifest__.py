@@ -15,6 +15,7 @@ Practice views (form, search, list)
         'data/ir_actions_act_window.xml',
         'data/ir_ui_menu.xml',
         'views/perfume_brand.xml',        
+        'views/perfume_product.xml',        
     ],
     'application': True,
     'installable': True,
