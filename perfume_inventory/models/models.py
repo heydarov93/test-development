@@ -74,8 +74,13 @@ class Accords(models.Model):
 
     name = fields.Char(string = "Accord name", required=True)
     perfume_ids = fields.Many2many(string = "Perfumes", comodel_name = "perfume.product")
+    sale_order_id = fields.Many2one(string = "Sale", comodel_name = "sale.order")
 
     _sql_constraints = [
         ('unique_accord_name', 'unique(name)', 'Accord already exists!')
     ]
 
+class SaleOrder(models.Model):
+    _inherit = "sale.order"
+
+    accord_ids = fields.One2many(string = "Accords", comodel_name = "perfume.accords", inverse_name = "sale_order_id")

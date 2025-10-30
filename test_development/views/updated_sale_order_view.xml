@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="sale_order_view_extend" model="ir.ui.view">
         <field name="name">sale.order.view.extend</field>
@@ -10,12 +10,12 @@
                     <field class="" name="custom_report" readonly="0" options="{'sandboxedPreview':true}" invisible="show_preview" />
                     <field class="" name="custom_report" readonly="0" options="{'sandboxedPreview':false}" invisible="not show_preview"/>
                     <field name="show_preview" />
-                    <!-- <button
+                     <button
                         id="togglePreview"
                         name="toggle_preview"
                         type="object"
                         class="btn-secondary"
-                        string="Show html preview" /> -->
+                        string="Show html preview" />
                     <button
                         name="print_custom_report"
                         type="object"
@@ -34,4 +34,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</odoo> -->
