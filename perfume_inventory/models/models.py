@@ -76,6 +76,6 @@ class Accords(models.Model):
     perfume_ids = fields.Many2many(string = "Perfumes", comodel_name = "perfume.product")
 
     _sql_constraints = [
-        ('unique_accord_name', 'UNIQUE(LOWER(name))', 'Accord already exists!')
+        ('unique_accord_name', 'unique(name)', 'Accord already exists!')
     ]
 
