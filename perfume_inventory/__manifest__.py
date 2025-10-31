@@ -9,7 +9,7 @@ Practice views (form, search, list)
     'website': "https://www.erpgo.az/",
     'category': 'Inventory',
     'version': '18.0',
-    'depends': ['base', 'sale'],
+    'depends': ['base', 'sale', 'crm'],
     'data': [
         'security/ir.model.access.csv',
         'data/ir_actions_act_window.xml',

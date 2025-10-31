@@ -73,6 +73,8 @@ class Accords(models.Model):
     _description = 'Accords'
 
     name = fields.Char(string = "Accord name", required=True)
+    color = fields.Char(string = "Accord color", default = "Neutral")
+    percentage = fields.Integer(string = "Percentage")
     perfume_ids = fields.Many2many(string = "Perfumes", comodel_name = "perfume.product")
     sale_order_id = fields.Many2one(string = "Sale", comodel_name = "sale.order")
 
@@ -84,3 +86,23 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     accord_ids = fields.One2many(string = "Accords", comodel_name = "perfume.accords", inverse_name = "sale_order_id")
+    accord_names = fields.Char(string="Accord name", compute="_compute_accord_names")
+    accord_colors = fields.Char(string="Accord color", compute="_compute_accord_names")
+    accord_percentages = fields.Char(string="Accord percentage", compute="_compute_accord_names")
+
+    @api.depends('accord_ids', 'accord_ids.name', 'accord_ids.color', 'accord_ids.percentage')
+    def _compute_accord_names(self):
+        for record in self:
+            if record.accord_ids:
+                record.accord_names = ', '.join(record.accord_ids.mapped('name'))
+                record.accord_colors = ', '.join(record.accord_ids.mapped('color'))
+                record.accord_percentages = ', '.join(map(lambda perc: str(perc),record.accord_ids.mapped('percentage')))
+            else:
+                record.accord_names = ''
+                record.accord_colors = ''
+                record.accord_percentages = ''
+
+    def display_all_accords(self):
+        raise UserError("Ishleyirem !!!")
+
+    
