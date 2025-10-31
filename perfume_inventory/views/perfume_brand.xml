@@ -14,7 +14,7 @@
                             <field
                                 class="border w-50"
                                 name="logo"
-                                nolabel="1"
+            
                                 filename="logo_name"
                                 widget="image" />
                             <field name="logo_name" invisible="1" />

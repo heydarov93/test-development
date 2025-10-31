@@ -16,6 +16,7 @@ Practice views (form, search, list)
         'data/ir_ui_menu.xml',
         'views/perfume_brand.xml',        
         'views/perfume_product.xml',
+        'views/perfumer_view.xml',
         'views/updated_sale_order.xml',
     ],
     'application': True,
