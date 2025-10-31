@@ -21,7 +21,9 @@
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
             <div name="button_box" position="inside">
-               <button name="display_all_accords" type="object" class="oe_stat_button" icon="fa-home" string="Display accords"  />
+               <button name="display_all_accords" type="object" class="oe_stat_button" icon="fa-home" string="Display accords">
+                   <field name="accord_count" widget="statinfo" string="Accords" />
+               </button>
             </div>
             <xpath expr="//group/field[@name='payment_term_id']" position="after">
                     <field name="accord_ids" widget="many2many_tags" />

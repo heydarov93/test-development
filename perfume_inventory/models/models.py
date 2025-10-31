@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import fields, models, api
+from odoo import fields, models, api, _
 from odoo.exceptions import UserError
 import time
 
@@ -86,6 +86,8 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     accord_ids = fields.One2many(string = "Accords", comodel_name = "perfume.accords", inverse_name = "sale_order_id")
+    accord_count = fields.Integer(string="Accord Count", compute="_compute_accord_count")
+
     accord_names = fields.Char(string="Accord name", compute="_compute_accord_names")
     accord_colors = fields.Char(string="Accord color", compute="_compute_accord_names")
     accord_percentages = fields.Char(string="Accord percentage", compute="_compute_accord_names")
@@ -102,7 +104,22 @@ class SaleOrder(models.Model):
                 record.accord_colors = ''
                 record.accord_percentages = ''
 
+    @api.depends('accord_ids')
+    def _compute_accord_count(self):
+        for record in self:
+            record.accord_count = len(record.accord_ids)
+        
     def display_all_accords(self):
-        raise UserError("Ishleyirem !!!")
 
+        return {
+            'name': _('Accords'),
+            'type': 'ir.actions.act_window',
+            'res_model': 'perfume.accords',
+            'view_mode': 'list,form',
+            'domain': [('sale_order_id', '=', self.id)],
+            'context': {
+                'default_sale_order_id': self.id,
+            },
+            'target': 'current',
+        }
     
