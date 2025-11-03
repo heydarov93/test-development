@@ -1,0 +1,7 @@
+<odoo>
+    <record id="perfume_accord" model="perfume.accords">
+        <field name="name">Qizilgul</field>
+        <field name="color">Pink</field>
+        <field name="percentage">22</field>
+    </record>
+</odoo>

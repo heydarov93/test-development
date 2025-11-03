@@ -57,10 +57,25 @@
         <field name="model">perfume.product</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name" operator="=" />
-                <field name="gender" operator="=" />
-                <field name="price" operator="=" />
+                <field string="Search by Name" name="name" operator="ilike" filter_domain="['|', ('name', 'ilike', self), ('brand_id', 'ilike', self)]" />
+                <filter name="filter_female" string="Female" domain="[('gender', '=', 'female')]" />
+                <filter name="filter_male" string="Male" domain="[('gender', '=', 'male')]" />
+                <group>
+                    <filter name="filter_unisex" string="Unisex" domain="[('gender', '=', 'unisex')]" />
+                </group>
+                <group>
+                    <filter name="group_by_brand" string="Brand" context="{'group_by': 'brand_id'}" />
+                    <group><filter name="group_by_price" string="Price" context="{'group_by': 'price'}" /></group>
+                </group>
+                <!-- <field name="gender" operator="=" />
+                <field name="price" operator=">" />-->
                 <field name="brand_id" operator="=" />
+
+                <searchpanel>
+                    <field name="gender" string="Gender" icon="fa-venus-mars" color="green" select="multi" enable_counters="1" />
+                    <field name="brand_id" string="Brand" icon="fa-tag" color="green" select="multi" enable_counters="1" />
+                    <field name="perfumer_ids" string="Perfumer" icon="fa-flask" color="green" select="multi" enable_counters="1" />
+                </searchpanel>
             </search>
         </field>
     </record>

@@ -19,6 +19,10 @@ Practice views (form, search, list)
         'views/perfumer_view.xml',
         'views/updated_sale_order.xml',
     ],
+    'demo': [
+        'demo/accords_demo.xml',
+       
+    ],
     'application': True,
     'installable': True,
 }
