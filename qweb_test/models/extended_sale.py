@@ -33,6 +33,7 @@ class SaleOrder(models.Model):
 
 class Mushteriler(models.Model):
     _name = 'mushteriler'
+    _description = "mushteriler"
     name = fields.Char()
     age = fields.Integer()
     # sales = fields.One2many(comodel_name="sale.order")
