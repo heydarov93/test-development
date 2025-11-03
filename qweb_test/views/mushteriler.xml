@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="mushteriler_view">
+        <field name="name">mushteriler.view</field>
+        <field name="name">mushteriler</field>
+        <field name="arch" type="xml">
+            <field name="name" />
+        </field>
+    </record>
+</odoo>

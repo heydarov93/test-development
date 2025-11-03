@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="perfume_perfumer_view_form" model="ir.ui.view">
+        <field name="name">perfume.perfumer.view.form</field>
+        <field name="model">perfume.perfumer</field>
+        <field name="arch" type="xml">
+            <form string="Add new perfumer">
+                <sheet>
+                    <h1>
+                        <field name="name" readonly="1" />
+                    </h1>
+                    <group>
+                        <group>
+                            <field
+                                class="border w-50"
+                                name="avatar"
+                                filename="avatar_name" 
+                                widget="image"
+                                readonly="1"
+                                nolabel="1"
+                                />
+                            <field
+                                name="avatar"
+                                filename="avatar_name" 
+                                />
+                            <field name="avatar_name" invisible="1" />
+                            <field name="name" />
+                            <field name="perfume_ids" widget="many2many_tags" />
+                        </group>
+                    </group>
+                </sheet>
+                
+            </form>
+        </field>
+    </record>
+</odoo>

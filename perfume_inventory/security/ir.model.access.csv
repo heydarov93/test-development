@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_perfume_brand_user,access.perfume.brand.user,model_perfume_brand,base.group_user,1,1,1,1
+access_perfume_product_user,access.perfume.product.user,model_perfume_product,base.group_user,1,1,1,1
+access_perfume_perfumer_user,access.perfume.perfumer.user,model_perfume_perfumer,base.group_user,1,1,1,1
+access_perfume_accords_user,access.perfume.accords.user,model_perfume_accords,base.group_user,1,1,1,1

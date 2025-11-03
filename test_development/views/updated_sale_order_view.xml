@@ -1,13 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="sale_order_view_extend" model="ir.ui.view">
         <field name="name">sale.order.view.extend</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
-            <xpath expr="//group/field[@name='payment_term_id']" position="attributes">
-                <attribute name="invisible">1</attribute>
+            <xpath expr="//group/field[@name='payment_term_id']" position="after">
+                <group class="w-100">
+                    <field class="" name="custom_report" readonly="0" options="{'sandboxedPreview':true}" invisible="show_preview" />
+                    <field class="" name="custom_report" readonly="0" options="{'sandboxedPreview':false}" invisible="not show_preview"/>
+                    <field name="show_preview" />
+                     <button
+                        id="togglePreview"
+                        name="toggle_preview"
+                        type="object"
+                        class="btn-secondary"
+                        string="Show html preview" />
+                    <button
+                        name="print_custom_report"
+                        type="object"
+                        class="btn-primary"
+                        string="Print Custom Report" />
+
+                    <field name="gender" />
+                    <field name="advanced_gender" placeholder="Select one of the genders" />
+                    <field name="mushteriler" />
+                    <field name="ref_field_id" />
+                    <field name="related_field_id" />
+                    <field name="binary_field" filename="binary_field_name" />
+                    <field name="binary_field_name" invisible="1" />
+                    <field name="binary_fields" />
+                </group>
             </xpath>
         </field>
     </record>
-</odoo>
+</odoo> -->

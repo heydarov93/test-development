@@ -12,7 +12,7 @@ Development for testing
     'depends': ['base', 'sale_management'],
     'data': [
         # 'security/ir.model.access.csv',
-        'views/updated_sale_order_view.xml'
+        # 'views/updated_sale_order_view.xml'
     ],
     'license': 'LGPL-3'
 }
