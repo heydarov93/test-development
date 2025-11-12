@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div>
+      <section class="mb-5">
+        <div class="container text-center">
+          <h2 class="h1" style="color: #875a7b">
+            🇦🇿 Azerbaijan E-Taxes Integration
+          </h2>
+          <h3 class="text-muted">
+            Pull company data from E-Taxes into your contacts
+          </h3>
+        </div>
+      </section>
+
+      <article class="row gy-5">
+        <section class="col-8 mx-auto">
+          <div class="container">
+            <div class="">
+              <h2 class="fs-3 fw-bolder border-bottom border-dark pb-2 mb-4">
+                Stop typing tax documents manually
+              </h2>
+              <p class="">
+                If you work with Azerbaijani companies, you've probably typed in
+                company details from tax documents dozens of times. We built
+                this to let you skip that. Enter a VOEN (tax ID) and we fetch
+                everything from the State Tax Service database—company name,
+                address, legal representative, the works.
+              </p>
+              <p class="">
+                Works with the official E-Taxes public API at
+                new.e-taxes.gov.az. No credentials needed, just needs internet
+                access.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-8 mx-auto">
+          <div class="container">
+            <h2 class="fs-3 fw-bolder border-bottom border-dark pb-2 mb-4">
+              What we built for you
+            </h2>
+            <div class="row g-5">
+              <div class="col-6">
+                <div class="">
+                  <h3 class="fs-4 border-bottom pb-2 mb-2 text-body">
+                    <i class="fa fa-id-card-o" aria-hidden="true"></i> Search by
+                    VOEN
+                  </h3>
+                  <p>
+                    Enter the tax ID and pull the full company record in
+                    seconds. Beats copying from PDF certificates.
+                  </p>
+                  <div>
+                    <a
+                      href="/perfume_inventory/static/description/search_by_tax_id.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        class="w-100"
+                        src="search_by_tax_id.png"
+                        alt="Search by VOEN"
+                        style="cursor: zoom-in"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="">
+                  <h3 class="fs-4 border-bottom pb-2 mb-2 text-body">
+                    <i class="fa fa-building-o" aria-hidden="true"></i> Search
+                    by company name
+                  </h3>
+                  <p>
+                    Don't have the VOEN handy? Search by name instead. Useful
+                    when a partner hands you a business card but no tax docs.
+                  </p>
+                  <div>
+                    <a
+                      href="/perfume_inventory/static/description/search_by_tax_id.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        class="w-100"
+                        src="./search_by_company_name.png"
+                        alt="Search by Company Name"
+                        style="cursor: zoom-in"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="">
+                  <h3 class="fs-4 border-bottom pb-2 mb-2 text-body">
+                    <i class="fa fa-list" aria-hidden="true"></i> Pick from
+                    multiple matches
+                  </h3>
+                  <p>
+                    If the search returns several companies (common names
+                    happen), you'll see them all in a popup. Pick the right one
+                    before importing.
+                  </p>
+                  <div>
+                    <a
+                      href="/perfume_inventory/static/description/search_by_tax_id.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        class="w-100"
+                        src="./update_contact_info.png"
+                        alt="Update Contact Info Directly from E-Taxes"
+                        style="cursor: zoom-in"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="">
+                  <h3 class="fs-4 border-bottom pb-2 mb-2 text-body">
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    Auto-fills contact fields
+                  </h3>
+                  <p>
+                    Once you select a company, it writes the name, VOEN,
+                    address, and legal rep straight into the partner form. Done.
+                  </p>
+                  <div>
+                    <a
+                      href="/perfume_inventory/static/description/search_by_tax_id.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        class="w-100"
+                        src="./structure_informations.png"
+                        alt="Auto-fills contact fields"
+                        style="cursor: zoom-in"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="">
+                  <h3 class="fs-4 border-bottom pb-2 mb-2 text-body">
+                    <i class="fa fa-home" aria-hidden="true"></i> Works on your
+                    own company too
+                  </h3>
+                  <p>
+                    The same buttons show up in Settings → Companies. Keep your
+                    own company data synced with what the tax authority has on
+                    file.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="">
+                  <h3 class="fs-4 border-bottom pb-2 mb-2 text-body">
+                    <i class="fa fa-user" aria-hidden="true"></i> Tracks legal
+                    representatives
+                  </h3>
+                  <p>
+                    Adds a field for the authorized signatory. Helpful when you
+                    need to know who can actually sign contracts.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-8 mx-auto">
+          <div class="container">
+            <div class="">
+              <h2 class="fs-3 fw-bolder border-bottom border-dark pb-2 mb-4">
+                What gets imported
+              </h2>
+              <ul class="">
+                <li>Company name (as registered)</li>
+                <li>VOEN (tax ID)</li>
+                <li>Legal address</li>
+                <li>Legal representative name</li>
+                <li>Taxpayer status</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-8 mx-auto">
+          <div class="container">
+            <h2 class="fs-3 fw-bolder border-bottom border-dark pb-2 mb-4">
+              How it works
+            </h2>
+            <div class="">
+              <ol class="">
+                <li>
+                  <strong>Open or create a contact</strong> — Go to Contacts,
+                  open a company record. Make sure "Is a Company" is checked.
+                </li>
+                <li>
+                  <strong>Click the search button</strong> — You'll see "Search
+                  by Tax ID" and "Search by Name" buttons next to the name
+                  field. Use whichever one you have data for.
+                </li>
+                <li>
+                  <strong>Review results</strong> — If there's more than one
+                  match, a popup shows all of them. Check addresses or other
+                  details to pick the right one.
+                </li>
+                <li>
+                  <strong>Import</strong> — Click "Update Details" and the form
+                  fills itself out. Save the contact when you're done.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-8 mx-auto">
+          <div class="container">
+            <div>
+              <div class="">
+                <h2 class="fs-3 fw-bolder border-bottom border-dark pb-2 mb-4">
+                  Why we think you'll love this
+                </h2>
+              </div>
+            </div>
+            <div class="">
+              <div class="">
+                <h3>⏱️ Saves time</h3>
+                <p>
+                  Stop retyping addresses from scanned documents. Lookup takes 5
+                  seconds instead of 2 minutes of data entry.
+                </p>
+              </div>
+              <div class="">
+                <h3>✓ Fewer typos</h3>
+                <p>
+                  Data comes straight from the government database. No more
+                  misspelled company names or wrong tax IDs in your system.
+                </p>
+              </div>
+            </div>
+            <div class="">
+              <div class="">
+                <h3>🔄 Stays current</h3>
+                <p>
+                  If a company changes their address or legal rep, you can
+                  re-fetch and update your records to match what's official.
+                </p>
+              </div>
+              <div class="">
+                <h3>👍 Simple to use</h3>
+                <p>
+                  Two buttons on the form you already use. No separate app, no
+                  extra screens to learn.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-8 mx-auto">
+          <div class="container">
+            <h2 class="fs-3 fw-bolder border-bottom border-dark pb-2 mb-4">
+              Technical requirements
+            </h2>
+            <div class="">
+              <ul class="">
+                <li><strong>Version:</strong> 18.0.1.8.0</li>
+                <li><strong>License:</strong> Proprietary</li>
+                <li><strong>Depends on:</strong> base, contacts</li>
+                <li><strong>Odoo version:</strong> 18.0</li>
+                <li>
+                  <strong>API used:</strong> Azerbaijan E-Taxes public endpoint
+                </li>
+                <li><strong>Credentials:</strong> None required</li>
+                <li>
+                  <strong>Network:</strong> Needs internet to reach
+                  new.e-taxes.gov.az
+                </li>
+              </ul>
+              <p class="">
+                <strong>About the API:</strong> This connects to the public
+                search endpoint that anyone can access. You don't need to
+                register or get an API key. If the tax authority's site is down,
+                searches won't work—but that's rare.
+              </p>
+              <div class="alert alert-warning" role="alert">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                It only finds legal companies registered in the Azerbaijan Tax
+                System.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="support" class="col-8 mx-auto">
+          <div class="container">
+            <h2 class="fs-3 fw-bolder border-bottom border-dark pb-2 mb-4">
+              Support
+            </h2>
+            <p class="">
+              <strong>Built by ERPGO</strong><br />
+              <a href="https://www.erpgo.az">erpgo.az</a> •
+              <a href="mailto:contact@erpgo.az">contact@erpgo.az</a>
+            </p>
+            <p class="">
+              Questions about setup or need custom changes? Get in touch.
+            </p>
+          </div>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
